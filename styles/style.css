@@ -1,0 +1,442 @@
+/* -=- Сброс -=- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  background-color: rgb(0, 0, 0);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -=- Дневная/ночная тема -=-*/
+
+:root {
+  --background: rgb(255, 255, 255);
+  --color: rgb(0, 0, 0);
+  --invert: invert(0);
+  --background-link: rgb(230, 230, 230);
+}
+
+body.dark {
+  --background: rgb(0, 0, 0);
+  --color: rgb(255, 255, 255);
+  --invert: invert(1);
+  --background-link: rgb(25, 25, 25);
+}
+
+/* -=- Навигационная панель -=-*/
+nav {
+  position: fixed;
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1% 0;
+
+  border-bottom: 1px solid rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(1.25rem);
+
+  z-index: 1000;
+}
+
+/* - Правая часть навиг. панели - */
+.nav-right {
+  display: flex;
+  align-items: center;
+
+  padding: 0 1%;
+}
+
+/* - Смена языка -*/
+
+/* кнопка */
+nav .language {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  
+  position: relative;
+}
+
+nav .language button {
+  width: auto;
+  color: rgb(250, 250, 250);
+  background: transparent;
+
+  border: none;
+
+  padding: 0 0.75rem;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+/* выпадающяя менюшка */
+nav .language-menu {
+  position: absolute;
+
+  opacity: 0;
+  visibility: hidden;
+
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(250, 250, 250);
+
+  overflow: hidden;
+
+  transform: translateY(-10px);
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    isibility 0.25s ease;
+}
+
+nav .language-menu.open {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+nav .language-menu a {
+    display: block;
+
+    padding: 0.5rem 0.75rem;
+
+    color: white;
+    text-decoration: none;
+}
+
+nav .language-menu a:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
+}
+
+/* треугольник */
+nav .to {
+  display: inline-block;
+
+  transition: transform 0.2s ease;
+}
+
+nav .to.open {
+  transform: rotate(180deg);
+}
+
+/* - Смена темы - */
+nav .theme button {
+  color: white;
+  background: transparent;
+
+  border: none;
+
+  padding: 0 1rem;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+/* -=- Шапка (приветствие) -=-*/
+
+header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+
+  padding: 20% 5%;
+
+  background-color:rgb(25, 43, 89);
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(255, 255, 255, 0)), url(../images/header.jpg);
+  background-size: cover;
+}
+
+header h1 {
+  color: rgb(255, 255, 255);
+  font-size: 5.5rem;
+}
+
+header h2 {
+  color: rgb(155, 155, 155);
+  font-size: 2.5rem;
+}
+
+/* -=- Часть "Обо мне" -=-*/
+
+article {
+  padding: 5% 0;
+  border-radius: 5rem;
+
+  background-color: var(--background);
+
+  border: 1px solid rgb(255, 255, 255);
+}
+
+/* - Фото -*/
+article .foto {
+  width: 100%;
+  display: flex;
+
+  margin-bottom: 5%;
+}
+
+article .foto img {
+  width: 15%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.500)
+}
+
+/* - Собственно, обо мне (текст) -*/
+
+article .text {
+  color: var(--color);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+
+  padding: 0 20%;
+  margin: 5% 0;
+}
+
+article .text h3 {
+  font-weight: 550;
+  font-size: 1.7rem;
+
+  margin: 2% 0;
+}
+
+article .text h4 {
+  font-weight: 500;
+  font-size: 1.3rem;
+
+  margin: 1% 0;
+}
+
+article .text ul {
+  list-style: inside;
+
+  margin-bottom: 1%;
+}
+
+article .text p {
+  margin-bottom: 1%;
+}
+
+/* - Ссылки на соц. аккаунты -*/
+article .links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+article .links div {
+  width: 10%;
+  height: auto;
+  margin: 0 20px;
+  padding: 2%;
+
+  border-radius: 2.5rem;
+
+  background-color: var(--background-link);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.500)
+}
+
+article .links a img {
+  display: block;
+  width: 50%;
+  height: auto;
+
+  margin: 10% auto;
+
+  filter: var(--invert);
+}
+
+article .links p {
+  color: var(--color);
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1rem;
+  line-height: 1.2rem;
+
+  text-align: center;
+
+  margin: 15% auto 0% auto;
+}
+
+/* -=- Основная часть (часть с проектами) -=-*/
+/* Пока пустая */
+
+main {
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+
+  height: auto;
+
+  padding: 10% 30%;
+
+  background-color: black;
+}
+
+main h4 {
+  font-size: 10rem;
+  margin-bottom: 10%;
+}
+
+main p {
+  font-size: 1.5rem;
+}
+
+/* -=- Футер -=-*/
+
+footer {
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  padding: 5% 0;
+
+  border-top: 1px solid rgb(255, 255, 255);
+
+  background-color: black;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer a {
+  color: rgb(255, 255, 255);
+}
+
+/* -=- Адаптивный дизайн -=- */
+
+@media (max-width: 1000px) {
+
+  nav {
+    height: 7%;
+
+    padding: 0 0;
+  }
+
+  nav .language{
+    font-size: 3.5rem;
+  }
+
+  nav .language button{
+    font-size: 3.5rem;
+  }
+
+  nav .language-menu a {
+    padding: 2rem 2rem;
+  }
+
+  nav .theme button {
+    font-size: 3.5rem;
+  }
+
+  header h1 {
+    font-size: 6rem;
+  }
+
+  header {
+    padding: 40% 5%;
+  }
+
+  header h2 {
+    font-size: 2rem;
+  }
+
+  article .foto img {
+    width: 40%;
+  }
+
+  article .text {
+    padding: 0 5%;
+  }
+
+  article .links {
+    display: block;
+  }
+
+  article .links div {
+    display: flex;
+    padding: 5% 5%;
+    margin: 10% auto;
+    width: 70%;
+  }
+
+  article .links a img {
+    margin: auto;
+  }
+
+  article .links p {
+    margin: auto;
+
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  main {
+    padding: 20% 10%;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 10% 20%;
+  }
+}

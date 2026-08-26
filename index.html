@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Yuriy Andryushin — Portfolio</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Static top navigation bar with language and theme controls -->
+        <nav>
+
+            <section class="navigation">
+
+            </section>
+
+            <section class="nav-right">
+
+                <section class="theme">
+                    <button id="theme-button">
+                        <span id="theme-icon">☀</span>
+                    </button>
+                </section>
+
+                <section class="language">
+                    <button>
+                        EN
+                        <span class="to">▽</span>
+                    </button>
+                    <div class="language-menu">
+                        <a href="index-uk.html">UA</a>
+                        <a href="index-ru.html">RU</a>
+                    </div>
+                </section>
+
+            </section>
+            
+        </nav>
+
+        <!-- Greeting -->
+        <header>
+            <h1>Hello, my name is Yuriy</h1>
+            <h2>and I am passionate about creating Worlds</h2>
+        </header>
+
+        <!-- About me section -->
+        <article>
+
+            <!-- Photo -->
+            <section class="foto">
+                <img src="images/yuriy.jpg">
+            </section>
+
+            <!-- About me -->
+            <section class="text">
+
+                <h3>Frontend Development</h3>
+                <p>I create website layouts and can build clean, responsive, and user-friendly websites that will
+                    display correctly on all devices and browsers. I pay close attention to code cleanliness and readability
+                    to provide a positive experience not only for users, but also for other developers who may work with
+                    my code in the future.</p>
+                <h4>What skills do I have?</h4>
+                <ul>
+                    <li>HTML5;</li>
+                    <li>CSS3;</li>
+                    <li>Responsive Web Design;</li>
+                    <li>Flexbox and CSS Grid;</li>
+                    <li>Semantic HTML;</li>
+                    <li>Basic JavaScript;</li>
+                    <li>Git and GitHub;</li>
+                </ul>
+                <h4>What can you expect from me?</h4>
+                <ul>
+                    <li>Clean and well-structured code;</li>
+                    <li>Responsive layouts for all screen sizes;</li>
+                    <li>Attention to detail;</li>
+                    <li>Clear communication;</li>
+                    <li>Timely delivery;</li>
+                </ul>
+                <p>I am constantly learning and developing new skills, so the range of services I offer will continue to grow.
+                    This portfolio is intended to demonstrate what I can do in practice. Below, you can find my web projects,
+                    which I work on in my free time to maintain my skills and learn something new. You can find all of these projects
+                    in my GitHub repositories.
+                </p>
+
+                <h3>Creative Activity</h3>
+                <p>My hobby is “creating worlds”. I write stories, create vector and pixel art, and make games. By combining all of these
+                    activities, I create my own Universes. If you need a creative solution, I will be happy to help.</p>
+                <p>Below you will find links to my social accounts, where you can see my work.</p>
+
+            </section>
+
+            <!-- Links to my social accounts -->
+             <section class="links">
+
+                <div>
+                    <a href="https://www.pinterest.com/yuriko_creator">
+                        <img src="images/icons/pinterest.png">
+                    </a>
+                    <p>See my art on Pinterest</p>
+                </div>
+
+                <div>
+                    <a href="https://www.wattpad.com/yuriko_creator">
+                        <img src="images/icons/wattpad.png">
+                    </a>
+                    <p>Read my stories on Wattpad</p>
+                </div>
+
+                <div>
+                    <a href="https://yuriko-creator.itch.io/">
+                        <img src="images/icons/itch.png">
+                    </a>
+                    <p>Play my games on Itch</p>
+                </div>
+
+                <div>
+                    <a href="https://github.com/yuriko-creator">
+                        <img src="images/icons/github.png">
+                    </a>
+                    <p>Check out my projects on GitHub</p>
+                </div>
+
+                <div>
+                    <a href="https://www.upwork.com/freelancers/~01b52985ef0452385b?mp_source=share">
+                        <img src="images/icons/upwork.png">
+                    </a>
+                    <p>Hire me on Upwork</p>
+                </div>
+
+             </section>
+
+        </article>
+
+        <!-- Main projects section -->
+        <main>
+            <h4>:(</h4>
+            <p>Unfortunately, there are no projects here yet. But I am already working on them!</p>
+        </main>
+
+        <!-- Footer with additional links to my social accounts -->
+        <footer>
+            <p>Frontend Developer | <a href="https://www.pinterest.com/yuriko_creator">Pinterest</a>
+            · <a href="https://www.wattpad.com/yuriko_creator">Wattpad</a>
+            · <a href="https://yuriko-creator.itch.io/">Itch</a>
+            · <a href="https://github.com/yuriko-creator">GitHub</a>
+            · <a href="https://www.upwork.com/freelancers/~01b52985ef0452385b?mp_source=share">Upwork</a>
+            </p>
+            <p>© 2026 Yuriy Andryushin</p>
+        </footer>
+
+        <script>
+            const LANG_BUT = document.querySelector(".language button");
+            const LANG_MENU = document.querySelector(".language-menu");
+            const TO = document.querySelector(".to");
+            const THEBUT = document.querySelector("#theme-button");
+            const THEICO = document.querySelector("#theme-icon");
+
+            const SAVTHE = localStorage.getItem("theme");
+
+            LANG_BUT.addEventListener("click", () => {
+                LANG_MENU.classList.toggle("open");
+                TO.classList.toggle("open");
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!event.target.closest(".language")) {
+                    LANG_MENU.classList.remove("open");
+                    TO.classList.remove("open");
+                }
+            });
+
+            if (SAVTHE === "dark") {
+                document.body.classList.add("dark");
+                THEICO.textContent = "☽";
+            }
+
+            THEBUT.addEventListener("click", () => {
+
+                document.body.classList.toggle("dark");
+
+                if (document.body.classList.contains("dark")) {
+
+                    THEICO.textContent = "☽";
+                    localStorage.setItem("theme", "dark");
+
+                } else {
+
+                    THEICO.textContent = "☀";
+                    localStorage.setItem("theme", "light");
+
+                }
+
+            });
+        </script>
+
+    </body>
+    
+</html>
